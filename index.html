@@ -9,13 +9,45 @@
     <!-- <script>
         console.log("Hi");
     </script> -->
-    <script type="text/javascript" src="app.js"></script>
+
+    <style>
+        textarea {
+            width: 90%;
+            display: block;
+            height: 5rem;
+            margin: 1rem;
+            padding: 0.5rem;
+        }
+
+        button {
+            margin: 1rem;
+        }
+        #output{
+            border: 2px solid gray;
+            height:10vh;
+            width: 80%;
+            margin: 1rem;
+            padding: 1rem;
+
+
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
-        <h1>Let's Go Banana's</h1>
+        <h1 class="head">Let's Talk Banana's</h1>
     </header>
+
+    <textarea placeholder="put your text here and we will convert it into banana" id="txt-input"></textarea>
+    <button id="btn-translate" name="Translator">Translate</button>
+
+    <div style="font-size: larger;">Output will come here 👇</div>
+    <div id="output"> </div>
+
+
+    <script type="text/javascript" src="app.js"></script>
 </body>
 
 </html>
