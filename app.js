@@ -1,39 +1,37 @@
-var btnTranslate = document.querySelector('#btn-translate');
+const btnTranslate = document.querySelector("#btn-translate");
 console.log(btnTranslate);
 
-var txtInput = document.querySelector('#txt-input');
+const txtInput = document.querySelector("#txt-input");
 console.log(txtInput);
 
-var outputDiv = document.querySelector('#output');
+const outputDiv = document.querySelector("#output");
 
 // var mockServerUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
-var serverUrl = "https://api.funtranslations.com/translate/minion.json"
+const serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
-function constructTranslationUrl(text) {
-    return serverUrl + '?' + 'text=' + text
-}
+const constructTranslationUrl = (text) => {
+  return serverUrl + "?" + "text=" + text;
+};
 
-function errorHandler(error) {
-    console.log("error occured: ", error)
+const errorHandler = (error) => {
+  console.log("error occured: ", error);
+};
 
-}
+const clickEventHandler = () => {
+  let inputText = txtInput.value; //input
 
-function clickEventHandler() {
-    var inputText = txtInput.value; //input
-
-    //calling server for processing
-    fetch(constructTranslationUrl(inputText)).then(response => response.json()) //processing
-        .then(json => {
-            var translatedText = json.contents.translated;
-            outputDiv.innerText = translatedText; //output
-        }).catch(errorHandler);
-}
+  //calling server for processing
+  fetch(constructTranslationUrl(inputText))
+    .then((response) => response.json()) //processing
+    .then((json) => {
+      let translatedText = json.contents.translated;
+      outputDiv.innerText = translatedText; //output
+    })
+    .catch(errorHandler);
+};
 
 btnTranslate.addEventListener("click", clickEventHandler);
-
-
-
 
 // var getTextArea=document.getElementsByTagName('textarea');
 // console.log(getTextArea);
