@@ -11,12 +11,11 @@ const outputDiv = document.querySelector("#output");
 const serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 const constructTranslationUrl = (text) => {
-  return serverUrl + "?" + "text=" + text;
+  `${serverUrl}?text=${text}`;
+  //   return serverUrl + "?" + "text=" + text;
 };
 
-const errorHandler = (error) => {
-  console.log("error occured: ", error);
-};
+const errorHandler = (error) => console.log("error occured: ", error);
 
 const clickEventHandler = () => {
   let inputText = txtInput.value; //input
