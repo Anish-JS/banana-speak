@@ -1,19 +1,22 @@
 const btnTranslate = document.querySelector("#btn-translate");
 console.log(btnTranslate);
 
-const txtInput = document.querySelector("#txt-input");
+let txtInput = document.querySelector("#txt-input");
 console.log(txtInput);
 
-const outputDiv = document.querySelector("#output");
+let outputDiv = document.querySelector("#output");
 
 // var mockServerUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 
 const serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 const constructTranslationUrl = (text) => {
-  `${serverUrl}?text=${text}`;
-  //   return serverUrl + "?" + "text=" + text;
+  return serverUrl + "?" + "text=" + text;
+  //   `${serverUrl}?text=${text}`;
 };
+console.log(constructTranslationUrl("hi"));
+
+//   return serverUrl + "?" + "text=" + text;
 
 const errorHandler = (error) => console.log("error occured: ", error);
 
