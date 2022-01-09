@@ -10,10 +10,8 @@ let outputDiv = document.querySelector("#output");
 
 const serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
-const constructTranslationUrl = (text) => {
-  return serverUrl + "?" + "text=" + text;
-  //   `${serverUrl}?text=${text}`;
-};
+const constructTranslationUrl = (text) => `${serverUrl}?text=${text}`;
+
 console.log(constructTranslationUrl("hi"));
 
 //   return serverUrl + "?" + "text=" + text;
